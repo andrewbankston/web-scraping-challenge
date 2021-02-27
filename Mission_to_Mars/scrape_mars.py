@@ -38,9 +38,6 @@ def scrape():
     mars_image_path = soup.find_all('img')[1]["src"]
     featured_image_url = "https://data-class-jpl-space.s3.amazonaws.com/JPL_Space/" + mars_image_path
 
-    # try pasting all four sections in sequence, using browser.visit to change pages.
-    # then browser.quit at the end
-
     # mars facts table scrape
     url3 = "https://space-facts.com/mars/"
 
