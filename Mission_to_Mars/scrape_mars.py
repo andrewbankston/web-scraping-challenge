@@ -75,8 +75,8 @@ def scrape():
 
         img_title = soup.find("h2", class_="title").text
 
-        img_section = soup.find_all("dl")
-        img_url = img_section[0].find('a')['href']
+        img_ref = soup.find("img", class_="wide-image")["src"]
+        img_url = "https://astrogeology.usgs.gov" + img_ref
         
         img_dict['title'] = img_title
         img_dict['img_url'] = img_url
