@@ -15,47 +15,65 @@
           <h1>Mission to Mars</h1>
           <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
         </div>
-        <div class="row" style="margin-bottom: 10px;">
+        <div class="row" style="margin-bottom: 10px; background-color: cadetblue; color: white;">
             <div class="col-md-12">
-                <h2>Latest Mars News</h2>
+                <h2 style="font-style: oblique;">Latest Mars News</h2>
             </div>
         </div>
         <div class="row">
             <div class="col-md-12">
-                <h3>{{ mars.latest_news_title }}</h3>
+                <h3 style="font-weight: bold;">{{ mars.latest_news_title }}</h3>
             </div>
         </div>
-        <div class="row" style="margin-bottom: 30px;">
+        <div class="row" style="margin-bottom: 10px;">
             <div class="col-md-12">
                 <p>{{ mars.latest_news_text }}</p>
             </div>
         </div>
-    </div>
-    <div class="container-fluid">
-        <hr>
         <div class="row" style="margin-bottom: 30px;">
-            <div class="col-md-6">
-                <h2>Featured Mars Image</h2>
-                <img src="{{ mars.jpl_image }}">
-            </div>
-            <div class="col-md-1"></div>
-            <div class="col-md-5">
-                <h2>Mars Facts</h2>
-                {{mars.html_table|safe}}
+            <div class="col-md-12">
+                <em>---Source: https://mars.nasa.gov/news/?page=0&per_page=40&order=publish_date+desc%2Ccreated_at+desc&search=&category=19%2C165%2C184%2C204&blank_scope=Latest</em>
             </div>
         </div>
     </div>
     <div class="container-fluid">
+        <div class="row" style="background-color: cadetblue; padding: 20px;">
+            <div class="col-md-12"></div>
+        </div>
         <div class="row">
+            <div class="col-md-6" style="padding-bottom: 10px;">
+                <h2 style="font-style: oblique;">Featured Mars Image</h2>
+                <img src="{{ mars.jpl_image }}">
+            </div>
+            <div class="col-md-1"></div>
+            <div class="col-md-5" style="padding-bottom: 10px">
+                <h2 style="font-style: oblique;">Mars Facts</h2>
+                <span style="font-size: x-large;">
+                {{mars.html_table|safe}}
+                </span>
+            </div>
+        </div>
+        <div class="row" style="margin-bottom: 30px;">
+            <div class="col-md-6">
+                <em>---Source: https://data-class-jpl-space.s3.amazonaws.com/JPL_Space/index.html</em>
+            </div>
+            <div class="col-md-1"></div>
+            <div class="col-md-5">
+                <em>---Source: https://space-facts.com/mars/</em>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row" style="background-color: cadetblue; color: white; margin-bottom: 10px;">
             <div class="col-md-12">
-                <h2 style="text-align: center;">Mars Hemispheres</h2>
+                <h2 style="text-align: center; font-style: oblique;">Mars Hemispheres</h2>
             </div>
         </div>
         
         <div class="row">
             <div class="col-md-1"></div>
             <div class="col-md-5">
-                <div class="card" style="width: 70rem; margin-bottom: 30px;">
+                <div class="card" style="padding-left: 50px; padding-top: 10px; width: 70rem; margin-bottom: 30px; border-style: solid; border-color: black;">
                     <div class="card-body">
                         <img class = "image" src="{{ mars.mars_images[0].img_url }}" style="width: 60rem; height: 60rem;">
                         <h4 class="card-title">{{ mars.mars_images[0].title }}</h4>
@@ -64,7 +82,7 @@
             </div>
             <div class="col-md-1"></div>
             <div class="col-md-5">
-                <div class="card" style="width: 70rem; margin-bottom: 30px;">
+                <div class="card" style="padding-left: 50px; padding-top: 10px; width: 70rem; margin-bottom: 30px; border-style: solid; border-color: black;">
                     <div class="card-body">
                         <img class = "image" src="{{ mars.mars_images[1].img_url }}" style="width: 60rem; height: 60rem;">
                         <h4 class="card-title">{{ mars.mars_images[1].title }}</h4>
@@ -76,7 +94,7 @@
         <div class="row">
             <div class="col-md-1"></div>
             <div class="col-md-5">
-                <div class="card" style="width: 70rem;">
+                <div class="card" style="padding-left: 50px; padding-top: 10px; width: 70rem; border-style: solid; border-color: black;">
                     <div class="card-body">
                         <img class = "image" src="{{ mars.mars_images[2].img_url }}" style="width: 60rem; height: 60rem;">
                         <h4 class="card-title">{{ mars.mars_images[2].title }}</h4>
@@ -85,12 +103,18 @@
             </div>
             <div class="col-md-1"></div>
             <div class="col-md-5">
-                <div class="card" style="width: 70rem;">
+                <div class="card" style="padding-left: 50px; padding-top: 10px; width: 70rem; border-style: solid; border-color: black;">
                     <div class="card-body">
                         <img class = "image" src="{{ mars.mars_images[3].img_url }}" style="width: 60rem; height: 60rem;">
                         <h4 class="card-title">{{ mars.mars_images[3].title }}</h4>
                     </div>
                 </div>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 10px; margin-bottom: 30px;">
+            <div class="col-md-1"></div>
+            <div class="col-md-11">
+                <em>---Source: https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars</em>
             </div>
         </div>
     </div>
